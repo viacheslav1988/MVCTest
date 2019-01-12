@@ -3,10 +3,16 @@
 
 #include "pch.h"
 #include <iostream>
+#include "TemperatureModel.h"
+#include "ConsoleView.h"
+#include "Controller.h"
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	TemperatureModel model(0);
+	ConsoleView view(&model);
+	Controller controller(&model);
+	controller.start();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
